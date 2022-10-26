@@ -20,6 +20,7 @@ describe('BasicToken', () => {
   it('Transfer adds amount to destination account', async () => {
     await token.transfer(walletTo.address, 7);
     expect(await token.balanceOf(walletTo.address)).to.equal(7);
+    expect(await token.balanceOf(wallet.address)).to.equal(993);
   });
 
   it('Transfer emits event', async () => {
